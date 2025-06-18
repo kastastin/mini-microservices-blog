@@ -1,1 +1,23 @@
-node_modules
+# Node modules
+node_modules/
+
+# TypeScript output
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# dotenv environment files
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# nodemon PID file
+pids
