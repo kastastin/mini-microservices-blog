@@ -1,3 +1,9 @@
+import PostCreate from "@/components/PostCreate";
+
 export default function App() {
-  return <h1>App</h1>;
+  return (
+    <div className="container">
+      <PostCreate />
+    </div>
+  );
 }
