@@ -1,7 +1,11 @@
-import { randomBytes } from "crypto";
+import cors from "cors";
 import express, { Application, Request, Response } from "express";
 
+import { randomBytes } from "crypto";
+
 const app: Application = express();
+
+app.use(cors());
 app.use(express.json());
 
 const PORT = 4000;
