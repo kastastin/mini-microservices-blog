@@ -26,10 +26,9 @@ export default function CommentCreate({ postId }: CommentCreateProps) {
 
   return (
     <>
-      <h6>Create Comment</h6>
       <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">
-          <label htmlFor="comment">Comment</label>
+          <label htmlFor="comment">New Comment</label>
           <input
             id="comment"
             type="text"

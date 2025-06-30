@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+import CommentList from "@/components/CommentList";
 import CommentCreate from "@/components/CommentCreate";
 
 type Post = {
@@ -33,6 +34,7 @@ export default function PostList() {
         >
           <h3 className="mb-0">{post.title}</h3>
           <hr />
+          <CommentList postId={post.id} />
           <CommentCreate postId={post.id} />
         </li>
       ))}
