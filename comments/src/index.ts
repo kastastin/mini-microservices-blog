@@ -14,6 +14,7 @@ const PORT = 4001;
 type Comment = {
   id: string;
   content: string;
+  status: "pending" | "approved" | "rejected";
 };
 
 const commentsByPostId: Record<string, Comment[]> = {};
@@ -28,7 +29,7 @@ app.post("/posts/:id/comments", async (req: Request, res: Response) => {
 
   const comments = commentsByPostId[req.params.id] || [];
 
-  comments.push({ id: commentId, content });
+  comments.push({ id: commentId, content, status: "pending" });
 
   commentsByPostId[req.params.id] = comments;
 
@@ -38,6 +39,7 @@ app.post("/posts/:id/comments", async (req: Request, res: Response) => {
       postId: req.params.id,
       commentId,
       content,
+      status: "pending",
     },
   });
 

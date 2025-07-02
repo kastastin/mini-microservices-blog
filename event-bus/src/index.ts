@@ -14,6 +14,7 @@ app.post("/events", async (req: Request, res: Response) => {
     "http://localhost:4000/events", // posts
     "http://localhost:4001/events", // comments
     "http://localhost:4002/events", // queries
+    "http://localhost:4003/events", // moderation
   ];
 
   await Promise.all(

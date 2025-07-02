@@ -11,6 +11,7 @@ const PORT = 4002;
 type Comment = {
   id: string;
   content: string;
+  status: "pending" | "approved" | "rejected";
 };
 
 type Post = {
@@ -37,10 +38,10 @@ app.post("/events", (req: Request, res: Response) => {
   }
 
   if (type === "CommentCreated") {
-    const { postId, commentId, content } = data;
+    const { postId, commentId, content, status } = data;
 
     const post = posts[postId];
-    post.comments.push({ id: commentId, content });
+    post.comments.push({ id: commentId, content, status });
   }
 
   res.send({});
