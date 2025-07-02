@@ -7,6 +7,7 @@ import CommentCreate from "@/components/CommentCreate";
 type Comment = {
   id: string;
   content: string;
+  status: "pending" | "approved" | "rejected";
 };
 
 type Post = {
