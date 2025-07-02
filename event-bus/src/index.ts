@@ -7,8 +7,12 @@ app.use(express.json());
 
 const PORT = 4005;
 
+const events: any = [];
+
 app.post("/events", async (req: Request, res: Response) => {
   const event = req.body;
+
+  events.push(event);
 
   const services = [
     "http://localhost:4000/events", // posts
@@ -36,6 +40,10 @@ app.post("/events", async (req: Request, res: Response) => {
   );
 
   res.send({ status: "OK" });
+});
+
+app.get("/events", (req: Request, res: Response) => {
+  res.send(events);
 });
 
 app.listen(PORT, () => {
